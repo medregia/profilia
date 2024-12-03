@@ -3,5 +3,5 @@ from django.urls import path
 from mediprofile import views
 
 urlpatterns = [
-    path('', views.index, name="index" ),
+    path('kk', views.display, name="index" ),
 ]
