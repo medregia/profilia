@@ -1,0 +1,12 @@
+<html>
+{% extends 'base.html' %}
+{% block create %}
+    <h1> Add New Profile </h1>
+    <form method='POST'>
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type= 'submit' value = 'add' >
+    </form>
+{% endblock %}
+
+<html> 
