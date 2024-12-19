@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,  get_object_or_404
 from django.http import HttpResponse
 from mediprofile.models import Section1
 from mediprofile.forms import ProfileForm
@@ -21,3 +21,13 @@ def deleteview(request, id):
     form.delete()
     return redirect('/kk')
     
+def editview(request, id):
+    edit = Section1.objects.get(id=id)
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=edit)
+        if form.is_valid():
+            form.save()
+            return redirect('/kk')
+        else:
+             return HttpResponse( "hi")
+    return render(request, 'edit.html', {'edit':edit})

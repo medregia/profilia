@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block edit %}
+    <h1>Edit File</h1>
+    <form method="POST">
+        {% csrf_token %}
+        
+        <label for="category_name">Category Name:</label>
+        <input type="text" name="category_name"  value="{{ edit.category_name }}">
+        
+        <label for="dlnumber_1">DL Number 1:</label>
+        <input type="text" name="dlnumber_1" value="{{ edit.dlnumber_1 }}">
+        
+                <label for="dlnumber_2">DL Number 2:</label>
+        <input type="text" name="dlnumber_2" value="{{ edit.dlnumber_2 }}" >
+        
+        <label for="dlnumber_3">DL Number 3:</label>
+        <input type="text" name="dlnumber_3" value="{{ edit.dlnumber_3 }}" >
+        
+        <label for="dlnumber_4">DL Number 4:</label>
+        <input type="text" name="dlnumber_4" value="{{ edit.dlnumber_4 }}" >
+        
+        <label for="dlnumber_5">DL Number 5:</label>
+        <input type="text" name="dlnumber_5" value="{{ edit.dlnumber_5 }}" >
+        
+        <label for="dlnumber_6">DL Number 6:</label>
+        <input type="text" name="dlnumber_6" value="{{ edit.dlnumber_6 }}" >
+        
+        <label for="dlnumber_7">DL Number 7:</label>
+        <input type="text" name="dlnumber_7" value="{{ edit.dlnumber_7 }}" >
+        
+        <label for="dlnumber_8">DL Number 8:</label>
+        <input type="text" name="dlnumber_8" value="{{ edit.dlnumber_8 }}" >
+        
+        <label for="dlnumber_9">DL Number 9:</label>
+        <input type="text" name="dlnumber_9" value="{{ edit.dlnumber_9 }}" readonly>
+      
+        
+        <input type="submit" value="Update">
+    </form>
+{% endblock %}

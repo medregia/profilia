@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-    {% extends 'base.html' %}
+{% extends 'base.html' %}
     <head>
         <title>Page Title</title>
     </head>
@@ -44,6 +42,9 @@
                         </a>
                         <a href="../delete/{{pr.id}}"> 
                             <button type="button"> delete </button>
+                        </a>
+                        <a href="../edit/{{pr.id}}"> 
+                            <button type="button"> Edit </button>
                         </a>
 
                     </td>
