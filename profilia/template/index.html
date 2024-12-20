@@ -1,58 +1,51 @@
 {% extends 'base.html' %}
-    <head>
-        <title>Page Title</title>
-    </head>
-    <body>
+{% block contone %}
+<h1>Profile</h1>
+<table>
+    <thead>
+        <tr>
+            <th> Categorey Name </th>
+            <th> DL-Number-01 </th>
+            <th> DL-Number-02 </th>
+            <th> DL-Number-03 </th>
+            <th> DL-Number-04 </th>
+            <th> DL-Number-05 </th>
+            <th> DL-Number-06 </th>
+            <th> DL-Number-07 </th>
+            <th> DL-Number-08 </th>
+            <th> DL-Number-09 </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    {% for pr in profile %}
+        <tr>
+            <td> {{pr.category_name}} </td>
+            <td> {{pr.dlnumber_1}} </td>
+            <td> {{pr.dlnumber_2}} </td>
+            <td> {{pr.dlnumber_3}} </td>
+            <td> {{pr.dlnumber_4}} </td>
+            <td> {{pr.dlnumber_5}} </td>
+            <td> {{pr.dlnumber_6}} </td>
+            <td> {{pr.dlnumber_7}} </td>
+            <td> {{pr.dlnumber_8}} </td>
+            <td> {{pr.dlnumber_9}} </td>
+            <td> 
+                <a href="/ss">
+                    <button type="button">Add Profile Details</button>
+                </a>
+                <a href="../delete/{{pr.id}}"> 
+                    <button type="button"> delete </button>
+                </a>
+                <a href="../edit/{{pr.id}}"> 
+                    <button type="button"> Edit </button>
+                </a>
 
-        <h1>Profile</h1>
-        {% block contone %}
-        
-        <table>
-            <thead>
-                <tr>
-                    <th> Categorey Name </th>
-                    <th> DL-Number-01 </th>
-                    <th> DL-Number-02 </th>
-                    <th> DL-Number-03 </th>
-                    <th> DL-Number-04 </th>
-                    <th> DL-Number-05 </th>
-                    <th> DL-Number-06 </th>
-                    <th> DL-Number-07 </th>
-                    <th> DL-Number-08 </th>
-                    <th> DL-Number-09 </th>
-                    <th> Actions </th>
-                </tr>
-            </thead>
-            {% for pr in profile %}
-                <tr>
-                
-                    <td> {{pr.category_name}} </td>
-                    <td> {{pr.dlnumber_1}} </td>
-                    <td> {{pr.dlnumber_2}} </td>
-                    <td> {{pr.dlnumber_3}} </td>
-                    <td> {{pr.dlnumber_4}} </td>
-                    <td> {{pr.dlnumber_5}} </td>
-                    <td> {{pr.dlnumber_6}} </td>
-                    <td> {{pr.dlnumber_7}} </td>
-                    <td> {{pr.dlnumber_8}} </td>
-                    <td> {{pr.dlnumber_9}} </td>
-                    <td> 
-                        <a href="/ss">
-                            <button type="button">Add Profile Details</button>
-                        </a>
-                        <a href="../delete/{{pr.id}}"> 
-                            <button type="button"> delete </button>
-                        </a>
-                        <a href="../edit/{{pr.id}}"> 
-                            <button type="button"> Edit </button>
-                        </a>
+            </td>
+        </tr>
+    {% endfor %}
+    
+</table>
+{% endblock %} 
 
-                    </td>
-                </tr>
-            {% endfor %}
-            
-        </table>
-        {% endblock %} 
-
-    </body>
+</body>
 </html>
