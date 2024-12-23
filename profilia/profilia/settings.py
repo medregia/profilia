@@ -17,6 +17,9 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 base2 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 profiletemplate = os.path.join(base2, 'template')
+profilestatics = os.path.join(base2, 'statics')
+print(profilestatics)
+print(profiletemplate)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -126,6 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [profilestatics]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
