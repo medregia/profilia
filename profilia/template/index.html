@@ -22,37 +22,39 @@
             <th>Actions</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="profile-table">
         {% for pr in profile %}
-            <tr>
-                <td>{{ pr.category_name }}</td>
-                <td>{{ pr.dlnumber_1 }}</td>
-                <td>{{ pr.dlnumber_2 }}</td>
-                <td>{{ pr.dlnumber_3 }}</td>
-                <td>{{ pr.dlnumber_4 }}</td>
-                <td>{{ pr.dlnumber_5 }}</td>
-                <td>{{ pr.dlnumber_6 }}</td>
-                <td>{{ pr.dlnumber_7 }}</td>
-                <td>{{ pr.dlnumber_8 }}</td>
-                <td>{{ pr.dlnumber_9 }}</td>
-                <td>
-                    <a href="/ss">
-                        <button type="button">Add Profile Details</button>
+            <tr data-id="{{ pr.id }}">
+                <td class="editable" > {{ pr.category_name }}</td>
+                <td class="editable" > {{ pr.dlnumber_1 }}</td>
+                <td class="editable" > {{ pr.dlnumber_2 }}</td>
+                <td class="editable" > {{ pr.dlnumber_3 }}</td>
+                <td class="editable" > {{ pr.dlnumber_4 }}</td>
+                <td class="editable" > {{ pr.dlnumber_5 }}</td>
+                <td class="editable" > {{ pr.dlnumber_6 }}</td>
+                <td class="editable" > {{ pr.dlnumber_7 }}</td>
+                <td class="editable" > {{ pr.dlnumber_8 }}</td>
+                <td class="editable" > {{ pr.dlnumber_9 }}</td>
+                <td> 
+                    <a href="../create">
+                        <button type="button" class="add-btn"> Add Profile Details </button>
                     </a>
                     <a href="../delete/{{ pr.id }}">
-                        <button type="button">Delete</button>
+                        <button type="button" class='delete-btn'> Delete </button>
                     </a>
-                    <a href="../edit/{{ pr.id }}">
+                    {% comment %} <a href="../edit/{{ pr.id }}">
                         <button type="button">Edit</button>
-                    </a>
-                   
+                    </a> {% endcomment %}
+                    <button class="edit-btn" > Edit </button>
+                    <button class="save-btn" style="display:none;"> Save </button>
+                    <button class="cancel-btn" style="display:none;"> Cancel </button>
                 </td>
             </tr>
         {% endfor %}
     </tbody>
 </table>
 <button onclick="myFunction()">Try it</button>
-
-
+<div id="trail">This content will be replaced by AJAX response.</div>
+<button onclick="loadDoc()">Load Text File</button>
 
 {% endblock %}
