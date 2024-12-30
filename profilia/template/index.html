@@ -42,9 +42,7 @@
                     <a href="../delete/{{ pr.id }}">
                         <button type="button" class='delete-btn'> Delete </button>
                     </a>
-                    {% comment %} <a href="../edit/{{ pr.id }}">
-                        <button type="button">Edit</button>
-                    </a> {% endcomment %}
+                    
                     <button class="edit-btn" > Edit </button>
                     <button class="save-btn" style="display:none;"> Save </button>
                     <button class="cancel-btn" style="display:none;"> Cancel </button>
@@ -53,8 +51,5 @@
         {% endfor %}
     </tbody>
 </table>
-<button onclick="myFunction()">Try it</button>
-<div id="trail">This content will be replaced by AJAX response.</div>
-<button onclick="loadDoc()">Load Text File</button>
 
 {% endblock %}
