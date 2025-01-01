@@ -118,3 +118,12 @@ document.addEventListener('DOMContentLoaded',() => {
     }
     
 });
+
+function showMore(profileId) {
+    const moreDiv = document.getElementById(`more-${profileId}`);
+    if (moreDiv.style.display === "none") {
+        moreDiv.style.display = "block";
+    } else {
+        moreDiv.style.display = "none";
+    }
+}

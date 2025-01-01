@@ -1,0 +1,26 @@
+Views.py----------------------------------
+    #         profile.category_name = data.get("field_1", profile.category_name)
+    #         profile.dlnumber_1 = data.get("field_2", profile.dlnumber_1)
+    #         profile.dlnumber_2 = data.get("field_3", profile.dlnumber_2)
+    #         profile.dlnumber_3 = data.get("field_4", profile.dlnumber_3)
+    #         profile.dlnumber_4 = data.get("field_5", profile.dlnumber_4) 
+    #         profile.dlnumber_5 = data.get("field_6", profile.dlnumber_5)
+    #         profile.dlnumber_6 = data.get("field_7", profile.dlnumber_6)
+    #         profile.dlnumber_7 = data.get("field_8", profile.dlnumber_7)
+    #         profile.dlnumber_8 = data.get("field_9", profile.dlnumber_8)
+    #         profile.dlnumber_9 = data.get("field_10", profile.dlnumber_9)
+                
+    #         profile.save()    
+                    
+    #         return JsonResponse({"success": True})
+    #     except Section1.DoesNotExist:
+    #         return JsonResponse({"success" : False, "error": "profile no t found"})
+    
+    # return JsonResponse({"sucess" : False, "error" : "Involid Request" })
+--------------------------------------------
+views -  edit ------------------------------
+# profile.category_name = data.get("field_1", profile.category_name)
+            # profile.dl1 = data.get("field_2", profile.dl1)
+            # profile.dl2 = data.get("field_3", profile.dl2)
+            # profile.save()
+--------------------------------------------

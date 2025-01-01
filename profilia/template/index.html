@@ -2,54 +2,53 @@
 {% load static %}
 
 {% block contone %}
-<h1>Profile</h1>
-
 <script src="{% static 'profile/button.js' %}"></script>
 
-<table>
+<h1>Profile List</h1>
+<table class="table">
     <thead>
         <tr>
             <th>Category Name</th>
-            <th>DL-Number-01</th>
-            <th>DL-Number-02</th>
-            <th>DL-Number-03</th>
-            <th>DL-Number-04</th>
-            <th>DL-Number-05</th>
-            <th>DL-Number-06</th>
-            <th>DL-Number-07</th>
-            <th>DL-Number-08</th>
-            <th>DL-Number-09</th>
+            <th>DL1</th>
+            <th>DL2</th>
+            <th>Additional DL Numbers</th>
             <th>Actions</th>
         </tr>
     </thead>
-    <tbody id="profile-table">
-        {% for pr in profile %}
-            <tr data-id="{{ pr.id }}">
-                <td class="editable" > {{ pr.category_name }}</td>
-                <td class="editable" > {{ pr.dlnumber_1 }}</td>
-                <td class="editable" > {{ pr.dlnumber_2 }}</td>
-                <td class="editable" > {{ pr.dlnumber_3 }}</td>
-                <td class="editable" > {{ pr.dlnumber_4 }}</td>
-                <td class="editable" > {{ pr.dlnumber_5 }}</td>
-                <td class="editable" > {{ pr.dlnumber_6 }}</td>
-                <td class="editable" > {{ pr.dlnumber_7 }}</td>
-                <td class="editable" > {{ pr.dlnumber_8 }}</td>
-                <td class="editable" > {{ pr.dlnumber_9 }}</td>
-                <td> 
-                    <a href="../create">
-                        <button type="button" class="add-btn"> Add Profile Details </button>
+    <tbody id = "profile-table">
+        {% for profile in profile %}
+            <tr data-id = "{{ profile.id }}">
+                <td class= "editable">{{ profile.category_name }}</td>
+                <td class= "editable">{{ profile.dl1 }}</td>
+                <td class= "editable">{{ profile.dl2 }}</td>
+                <td>
+                    {% with profile.additional_dl_numbers.all|length as additional_count %}
+                        {% if additional_count > 0 %}
+                            {{ profile.additional_dl_numbers.all|slice:":2"|join:", " }}
+                            {% if additional_count > 2 %}
+                                <button class="more-btn" onclick="showMore('{{ profile.id }}')">More</button>
+                                <div id="more-{{ profile.id }}" style="display:none;">
+                                    {{ profile.additional_dl_numbers.all|slice:"2:"|join:", " }}
+                                </div>
+                            {% endif %}
+                        {% else %}
+                            No additional DL numbers
+                        {% endif %}
+                    {% endwith %}
+                </td>
+                <td>
+                    <a href="{% url 'addprofile' %}">
+                        <button type="button" class="add-btn">Add Profile Details</button>
                     </a>
-                    <a href="../delete/{{ pr.id }}">
-                        <button type="button" class='delete-btn'> Delete </button>
+                    <a href="{% url 'deleteview' profile.id %}">
+                        <button type="button" class="delete-btn">Delete</button>
                     </a>
-                    
-                    <button class="edit-btn" > Edit </button>
-                    <button class="save-btn" style="display:none;"> Save </button>
-                    <button class="cancel-btn" style="display:none;"> Cancel </button>
+                    <button class="edit-btn">Edit</button>
+                    <button class="save-btn" style="display:none;">Save</button>
+                    <button class="cancel-btn" style="display:none;">Cancel</button>
                 </td>
             </tr>
         {% endfor %}
     </tbody>
-</table>
-
+</table> 
 {% endblock %}
