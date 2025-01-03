@@ -1,0 +1,169 @@
+Here’s the specific data required for storing business types **related to the medical field**, categorized by their ownership type: 
+
+---
+
+### **1. Proprietorship**  
+A single-person-owned business.  
+
+#### **Details Required**:  
+- **Proprietor Information**:  
+  - Full Name.  
+  - PAN (Permanent Account Number).  
+  - Aadhaar Number (optional).  
+- **Business Details**:  
+  - Business Name.  
+  - GSTIN (if applicable).  
+  - Drug License Number.  
+  - Shop & Establishment Registration (if applicable).  
+- **Contact Information**:  
+  - Mobile Number.  
+  - Email Address.  
+- **Address Details**:  
+  - Registered Business Address.  
+  - Shop Address (if different).  
+
+---
+
+### **2. Partnership**  
+Owned by two or more individuals.  
+
+#### **Details Required**:  
+- **Partnership Information**:  
+  - Partnership Firm Name.  
+  - PAN of the Partnership Firm.  
+  - GSTIN (if registered).  
+  - Drug License Number (for medical stores).  
+- **Partner Information** (for each partner):  
+  - Full Name.  
+  - Contact Number.  
+  - Email Address.  
+  - PAN Number.  
+  - Profit Sharing Ratio.  
+- **Partnership Agreement Details**:  
+  - Partnership Deed (Document upload).  
+  - Date of Registration (if registered).  
+  - Registration Number (from Registrar of Firms, if applicable).  
+- **Contact Information**:  
+  - Business Phone Number.  
+  - Business Email.  
+- **Address Details**:  
+  - Registered Business Address.  
+  - Shop Address (if different).  
+
+---
+
+### **3. Private Limited Company (Pvt. Ltd.)**  
+A registered legal entity with a board of directors.  
+
+#### **Details Required**:  
+- **Company Information**:  
+  - Company Name.  
+  - CIN (Corporate Identification Number).  
+  - GSTIN (if registered).  
+  - Drug License Number.  
+- **Director Details** (for each director):  
+  - Full Name.  
+  - PAN.  
+  - DIN (Director Identification Number).  
+  - Aadhaar Number (optional).  
+  - Contact Number.  
+  - Email Address.  
+- **Business Registration Information**:  
+  - Certificate of Incorporation.  
+  - Date of Registration.  
+  - Registrar of Companies (RoC) Registration Number.  
+- **Contact Information**:  
+  - Business Phone Number.  
+  - Business Email Address.  
+- **Address Details**:  
+  - Registered Office Address.  
+  - Shop Address (if different).  
+
+---
+
+### **4. Limited Liability Partnership (LLP)**  
+A hybrid structure with limited liability protection for partners.  
+
+#### **Details Required**:  
+- **LLP Information**:  
+  - LLP Name.  
+  - LLPIN (LLP Identification Number).  
+  - GSTIN (if registered).  
+  - Drug License Number.  
+- **Partner Information**:  
+  - Full Name.  
+  - PAN Number.  
+  - Profit Sharing Ratio.  
+  - Designation (Partner/Designated Partner).  
+  - Contact Number.  
+  - Email Address.  
+- **Business Registration Information**:  
+  - Certificate of Incorporation.  
+  - Date of Registration.  
+  - LLP Agreement (Document upload).  
+- **Contact Information**:  
+  - Business Phone Number.  
+  - Business Email.  
+- **Address Details**:  
+  - Registered Business Address.  
+  - Shop Address (if different).  
+
+---
+
+### **5. Franchise**  
+When operating under a larger brand name like Apollo Pharmacy.  
+
+#### **Details Required**:  
+- **Franchise Information**:  
+  - Franchise Name.  
+  - Parent Company Name (e.g., Apollo).  
+  - Franchise Agreement Number.  
+  - GSTIN.  
+  - Drug License Number.  
+- **Franchise Owner Information**:  
+  - Full Name.  
+  - Contact Number.  
+  - Email Address.  
+- **Parent Company Support Details**:  
+  - Name and Contact of Parent Company Representative.  
+  - Duration of the Franchise Agreement.  
+- **Address Details**:  
+  - Registered Franchise Address.  
+  - Shop Address (if different).  
+
+---
+
+### **6. Cooperative Society (Pharmacy Societies)**  
+Owned collectively by a group for shared benefit.  
+
+#### **Details Required**:  
+- **Society Information**:  
+  - Society Name.  
+  - Registration Number.  
+  - GSTIN.  
+  - Drug License Number.  
+- **Member Information** (for each member):  
+  - Full Name.  
+  - Contact Number.  
+  - PAN.  
+  - Role in Society.  
+- **Contact Information**:  
+  - Society Phone Number.  
+  - Society Email Address.  
+- **Address Details**:  
+  - Registered Society Address.  
+  - Shop Address (if different).  
+
+---
+
+### Summary:  
+| Business Type          | Key Details Needed                                              |  
+|-------------------------|----------------------------------------------------------------|  
+| Proprietorship          | Proprietor Name, PAN, GSTIN, Drug License, Contact, Address.  |  
+| Partnership             | Firm Name, Partner Details, Agreement, GSTIN, Drug License.   |  
+| Private Limited Company | Directors’ Details, CIN, PAN, GSTIN, Drug License.            |  
+| LLP                     | LLPIN, Partners’ Details, Agreement, GSTIN, Drug License.    |  
+| Franchise               | Franchise Name, Agreement, Parent Company, Contact, Address. |  
+| Cooperative Society     | Society Name, Member Details, Registration, GSTIN, License.  |  
+
+Let me know if you’d like a database or form layout for these fields!

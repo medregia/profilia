@@ -1,10 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block create %}
-    <h1> Add New Profile </h1>
-    <form method='POST'>
-        {{form.as_p}}
+<link rel="stylesheet" href="{% static 'css/profile/index.css' %}"> 
+<h1> Profile Setup Section </h1>
+<div class= "profileTable">
+    <form method="POST">    
         {% csrf_token %}
-        <input type= 'submit' value = 'add' >
+            <div class="form-group">
+                <label for="category_name">Category Name:</label> <br>
+                <input type="text" id="category_name" name="category_name" required> <br>
+                <label for="dl1">Drug License Number 1:</label> <br> 
+                <input type="text" id="dl1" name="dl1" required> <br>
+                <label for="dl2">DL2:</label> <br>
+                <input type="text" id="dl2" name="dl2" required> <br>
+            </div>
+
+        <button type="submit" > Submit </button>
     </form>
+</div>
 {% endblock %}

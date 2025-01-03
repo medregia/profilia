@@ -2,7 +2,6 @@ import json
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse, HttpResponse
 from mediprofile.models import Section1
-from mediprofile.forms import ProfileForm
 
 def display(request):
     profiles = Section1.objects.all()
@@ -10,13 +9,19 @@ def display(request):
 
 def addprofile(request):
     if request.method == 'POST':
-        form = ProfileForm(request.POST)
-        if form.is_valid():
-            form.save()
+        category_name = request.POST.get('category_name')
+        dl1 = request.POST.get('dl1')
+        dl2 = request.POST.get('dl2')
+
+        if category_name and dl1 and dl2:
+            Section1.objects.create(
+                category_name=category_name,
+                dl1=dl1,
+                dl2=dl2
+            )
             return redirect('/index')
-    else:
-        form = ProfileForm()
-    return render(request, 'create.html', {'form': form})
+    
+    return render(request, 'create.html')
 
 def deleteview(request, id):
     Section1.objects.filter(id=id).delete()
@@ -49,6 +54,3 @@ def edit_profile(request, id):
             return JsonResponse({"success": False, "error": "Profile not found"})
     
     return JsonResponse({"success": False, "error": "Invalid Request"})
-    
-           
-            

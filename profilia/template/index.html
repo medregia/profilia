@@ -3,52 +3,55 @@
 
 {% block contone %}
 <script src="{% static 'profile/button.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/profile/index.css' %}"> 
 
-<h1>Profile List</h1>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Category Name</th>
-            <th>DL1</th>
-            <th>DL2</th>
-            <th>Additional DL Numbers</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody id = "profile-table">
-        {% for profile in profile %}
-            <tr data-id = "{{ profile.id }}">
-                <td class= "editable">{{ profile.category_name }}</td>
-                <td class= "editable">{{ profile.dl1 }}</td>
-                <td class= "editable">{{ profile.dl2 }}</td>
-                <td>
-                    {% with profile.additional_dl_numbers.all|length as additional_count %}
-                        {% if additional_count > 0 %}
-                            {{ profile.additional_dl_numbers.all|slice:":2"|join:", " }}
-                            {% if additional_count > 2 %}
-                                <button class="more-btn" onclick="showMore('{{ profile.id }}')">More</button>
-                                <div id="more-{{ profile.id }}" style="display:none;">
-                                    {{ profile.additional_dl_numbers.all|slice:"2:"|join:", " }}
-                                </div>
-                            {% endif %}
-                        {% else %}
-                            No additional DL numbers
-                        {% endif %}
-                    {% endwith %}
-                </td>
-                <td>
-                    <a href="{% url 'addprofile' %}">
-                        <button type="button" class="add-btn">Add Profile Details</button>
-                    </a>
-                    <a href="{% url 'deleteview' profile.id %}">
-                        <button type="button" class="delete-btn">Delete</button>
-                    </a>
-                    <button class="edit-btn">Edit</button>
-                    <button class="save-btn" style="display:none;">Save</button>
-                    <button class="cancel-btn" style="display:none;">Cancel</button>
-                </td>
+<h1> Med-Profile </h1>
+<div class= "profileTable">    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Category Name</th>
+                <th>DL1</th>
+                <th>DL2</th>
+                <th>Additional DL Numbers</th>
+                <th>Actions</th>
             </tr>
-        {% endfor %}
-    </tbody>
-</table> 
+        </thead>
+        <tbody id = "profile-table">
+            {% for profile in profile %}
+                <tr data-id = "{{ profile.id }}">
+                    <td class= "editable">{{ profile.category_name }}</td>
+                    <td class= "editable">{{ profile.dl1 }}</td>
+                    <td class= "editable">{{ profile.dl2 }}</td>
+                    <td>
+                        {% with profile.additional_dl_numbers.all|length as additional_count %}
+                            {% if additional_count > 0 %}
+                                {{ profile.additional_dl_numbers.all|slice:":2"|join:", " }}
+                                {% if additional_count > 2 %}
+                                    <button class="more-btn" onclick="showMore('{{ profile.id }}')">More</button>
+                                    <div id="more-{{ profile.id }}" style="display:none;">
+                                        {{ profile.additional_dl_numbers.all|slice:"2:"|join:", " }}
+                                    </div>
+                                {% endif %}
+                            {% else %}
+                                No additional DL numbers
+                            {% endif %}
+                        {% endwith %}
+                    </td>
+                    <td>
+                        <a href="{% url 'addprofile' %}">
+                            <button type="button" class="add-btn">Add </button>
+                        </a>
+                        <a href="{% url 'deleteview' profile.id %}">
+                            <button type="button" class="delete-btn">Delete</button>
+                        </a>
+                        <button class="edit-btn">Edit</button>
+                        <button class="save-btn" style="display:none;">Save</button>
+                        <button class="cancel-btn" style="display:none;">Cancel</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div> 
 {% endblock %}

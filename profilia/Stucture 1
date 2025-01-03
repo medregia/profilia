@@ -1,0 +1,76 @@
+Stucture 1
+project_root/
+├── manage.py
+├── project_name/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── asgi.py
+├── profiles/                # App for user profiles
+│   ├── migrations/
+│   ├── templates/
+│   │   └── profiles/
+│   │       ├── profile_form.html
+│   │       ├── profile_list.html
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── business/                # App for business details
+│   ├── migrations/
+│   ├── templates/
+│   │   └── business/
+│   │       ├── business_form.html
+│   │       ├── business_list.html
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── accounts/               # App for custom authentication
+│   ├── migrations/
+│   ├── templates/
+│   │   └── accounts/
+│   │       ├── login.html
+│   │       ├── signup.html
+│   │       ├── password_reset.html
+│   │       ├── password_change.html
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── forms.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py,
+├── master/                  # This app manages the master table and serves as the main admin module. Only the admin has access to this project; regular users do not have permissions. While the built-in admin user can access the system, this specific feature or access is not included for regular users.
+│   ├── migrations/
+│   ├── templates/
+│   │   └── master/
+│   │       ├── master_list.html
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── static/  "*"                # Shared static files
+│   ├── css/
+│   ├── js/
+│   └── images/
+└── templates/ "*"               # Shared templates
+    ├── base.html
+    └── index.html
+
+    
+simple answer need
+Question1: Each application has its own admin.py file. Does it support separate logins for each admin, or is a single superuser account used across all applications?
+
+Question 2:
+"Is it a good or bad practice to place all templates outside "*" the main directory? For example, using application name folders like template/profile or business/base.html for create, edit, and other views. Should static files follow this approach, or is there a better practice to organize them?" as well static "*""
+
+Question 3:
+"This is not the main application; the details mentioned above are for supporting applications. What aspects should not be utilized in this structure? My application is large and complex, so I want to ensure it remains organized

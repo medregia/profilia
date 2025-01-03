@@ -1,0 +1,28 @@
+.profileTable {
+    width : 35%;
+    border : 1px solid red;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+.more-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.more-btn:hover {
+    background-color: #0056b3;
+}
