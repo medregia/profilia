@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Example</title>
+    <link rel="stylesheet" href="{% static 'businessType/css/index.css' %}"> 
+</head>
+<body>
+    <header>
+        <h1>Dynamic Form Example</h1>
+    </header>
+    <main>
+        <p>Please select a business type to display the relevant form:</p>
+        <label for="business_type">Choose a Business Type:</label>
+        <select name="business_type" id="business_type" required>
+            <option value="">-- Select --</option>
+            <option value="Proprietorship">Proprietorship</option>
+            <option value="Partnership">Partnership</option>
+            <option value="Private Limited">Private Limited</option>
+            <option value="LLP">LLP</option>
+            <option value="Franchise">Franchise</option>
+            <option value="Cooperative Society">Cooperative Society</option>
+        </select>
+
+        <!-- Proprietorship Form -->
+        <form id="proprietorship_form" class="hidden" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="nrQ3e3FKQf2cjTZ3AU3ow0ztiV10TdgobB48OMwqeBJUOTlEqCw0cxhPN3JgetWd">
+            <p>
+                <label for="id_proprietor_name">Proprietor name:</label>
+                <input type="text" name="proprietor_name" maxlength="100" id="id_proprietor_name">
+            </p>
+            <p>
+                <label for="id_business_name">Business name:</label>
+                <input type="text" name="business_name" maxlength="100" required id="id_business_name">
+            </p>
+            <p>
+                <label for="id_pan">Pan:</label>
+                <input type="text" name="pan" maxlength="10" id="id_pan">
+            </p>
+            <p>
+                <label for="id_gstin">Gstin:</label>
+                <input type="text" name="gstin" maxlength="15" id="id_gstin">
+            </p>
+            <p>
+                <label for="id_contact_number">Contact number:</label>
+                <input type="text" name="contact_number" maxlength="15" required id="id_contact_number">
+            </p>
+            <p>
+                <label for="id_email">Email:</label>
+                <input type="email" name="email" maxlength="254" required id="id_email">
+                <input type="hidden" name="business_type" value="Proprietorship" id="id_business_type">
+            </p>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Dynamic Form Example</p>
+    </footer>
+
+    <script src= {% static "businessType/js/type.js" %} >    </script>
+</body>
+</html>

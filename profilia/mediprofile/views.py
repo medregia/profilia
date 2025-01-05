@@ -5,7 +5,7 @@ from mediprofile.models import Section1
 
 def display(request):
     profiles = Section1.objects.all()
-    return render(request, 'index.html', {'profile': profiles})
+    return render(request, 'mediprofile/index.html', {'profile': profiles})
 
 def addprofile(request):
     if request.method == 'POST':
@@ -19,13 +19,13 @@ def addprofile(request):
                 dl1=dl1,
                 dl2=dl2
             )
-            return redirect('/index')
+            return redirect('../index')
     
-    return render(request, 'create.html')
+    return render(request, 'mediprofile/create.html')
 
 def deleteview(request, id):
     Section1.objects.filter(id=id).delete()
-    return redirect('/index')
+    return redirect('/../index')
     
 def edit_profile(request, id):
     if request.method == 'POST':

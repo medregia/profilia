@@ -1,7 +1,3 @@
-function myFunction() {
-    alert(" Golden This is Ishaaq");
-}
-
 function loadDoc() {
     const a = new XMLHttpRequest();
     a.onload = function(){
